@@ -266,10 +266,6 @@ hr {
 }
 
 @media only screen and (max-width: 640px) {
-  .cta {
-    margin-bottom: 2rem;
-  }
-
   .cta-title {
     font-size: 2.5rem;
     padding: 0 2rem;
@@ -281,11 +277,15 @@ hr {
   }
 
   .card-container {
-    height: 500px;
+    height: 550px;
+  }
+
+  .card {
+    top: 3rem;
   }
 
   .buttons {
-    bottom: 10px;
+    bottom: 25px;
   }
 
   .footer {
