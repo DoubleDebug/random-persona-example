@@ -1,0 +1,298 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;600&display=swap');
+
+html,
+body {
+  margin: 0;
+}
+
+:root {
+  --colorOrange: #ed8936;
+  --colorBackground: #1a202c;
+}
+
+body {
+  height: 100vh;
+  background-color: var(--colorBackground);
+  color: white;
+  font-family: 'Work Sans', sans-serif;
+}
+
+.card-container {
+  display: grid;
+  height: 600px;
+  width: 100%;
+  row-gap: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.card {
+  width: 300px;
+  height: 350px;
+  border-radius: 10px;
+  background-image: linear-gradient(160deg, #ffcb64 0%, #e46600 100%);
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 75% auto 10% 30px;
+  margin: auto;
+  padding: 20px 10px;
+  cursor: grab;
+  position: absolute;
+  left: calc(50% - 160px);
+  top: calc(50% - 250px);
+}
+
+.card:active {
+  cursor: grabbing;
+}
+
+.avatar-container {
+  display: grid;
+  position: relative;
+}
+
+.img-circle {
+  border-radius: 50%;
+  object-fit: fill;
+}
+
+.avatar {
+  position: absolute;
+  height: 95%;
+  aspect-ratio: 1 / 1;
+  left: 50%;
+  transform: translate(-50%, 0);
+  border: 5px solid white;
+}
+
+.gender {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  top: 72%;
+  left: 72%;
+}
+
+.gender-male {
+  content: url('../assets/genderMale.png');
+}
+
+.gender-female {
+  content: url('../assets/genderFemale.png');
+}
+
+.card-text {
+  color: white;
+  text-align: center;
+  align-self: center;
+  overflow: hidden;
+}
+
+.name {
+  font-size: 2.25rem;
+  margin-top: 30px;
+}
+
+.occupation {
+  font-weight: 400;
+}
+
+.btn {
+  margin: auto;
+  width: 65px;
+  height: 65px;
+  background: white;
+  border: none;
+  border-radius: 50%;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  cursor: pointer;
+  font-size: 2rem;
+  color: #d6d6d6;
+}
+
+.btn:active {
+  transform: scale(0.95);
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  justify-self: center;
+  align-self: flex-end;
+  width: min-content;
+  column-gap: 1rem;
+  position: absolute;
+  bottom: 60px;
+}
+
+.btn-heart {
+  color: rgb(255, 112, 112);
+}
+
+.btn-heart:hover {
+  color: rgb(255, 46, 46);
+}
+
+.btn-x {
+  color: rgb(153, 153, 153);
+}
+
+.btn-x:hover {
+  color: rgb(100, 100, 100);
+}
+
+.cta {
+  display: grid;
+  text-align: center;
+}
+
+.cta-title {
+  font-size: 3.5rem;
+  line-height: 110%;
+  margin-bottom: 0;
+}
+
+.cta-title-persona {
+  color: var(--colorOrange);
+}
+
+.cta-description {
+  color: #718096;
+  font-size: 1.5rem;
+  max-width: 550px;
+  justify-self: center;
+}
+
+hr {
+  margin-top: 5rem;
+  margin-bottom: 0;
+  border-style: solid;
+  border-color: rgb(141, 141, 141);
+  border-width: 1px;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+.v-separator {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.social-media-link {
+  display: flex;
+  fill: white;
+  width: 20px;
+  height: 20px;
+  margin-right: 0.75rem;
+}
+
+.card-side {
+  position: absolute;
+  top: -100px;
+  bottom: 0px;
+  z-index: -1;
+  background: #384152;
+  opacity: 0%;
+  transition: opacity 0.5s ease;
+}
+
+.card-left-side {
+  left: 0;
+  right: 50%;
+}
+
+.card-right-side {
+  left: 50%;
+  right: 0;
+}
+
+.api-link {
+  color: white;
+  margin-left: 0.4rem;
+}
+
+.api-link:visited {
+  color: white;
+}
+
+.anim-swipe-left {
+  animation: swipeLeft 1s ease;
+}
+
+.anim-swipe-right {
+  animation: swipeRight 1s ease;
+}
+
+.anim-fade-in {
+  animation: fadeIn 1s ease;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0%;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
+
+@keyframes swipeLeft {
+  0% {
+    transform: translateX(0px);
+    opacity: 100%;
+  }
+  100% {
+    transform: translateX(-400px);
+    opacity: 0%;
+  }
+}
+
+@keyframes swipeRight {
+  0% {
+    transform: translateX(0px);
+    opacity: 100%;
+  }
+  100% {
+    transform: translateX(400px);
+    opacity: 0%;
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  .cta {
+    margin-bottom: 2rem;
+  }
+
+  .cta-title {
+    font-size: 2.5rem;
+    padding: 0 2rem;
+  }
+
+  .cta-description {
+    font-size: 1.2rem;
+    padding: 0 1.5rem;
+  }
+
+  .card-container {
+    height: 500px;
+  }
+
+  .buttons {
+    bottom: 10px;
+  }
+
+  .footer {
+    font-size: 0.725rem;
+  }
+
+  hr {
+    margin-top: 5rem;
+  }
+}
