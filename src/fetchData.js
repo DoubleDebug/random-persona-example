@@ -9,8 +9,8 @@ let pos1 = 0,
 cardElement.ontouchmove = dragMouseDown;
 cardElement.onmousedown = dragMouseDown;
 cardElement.onmouseup = dragMouseUp;
-document.getElementsByClassName('btn-heart')[0].onclick = () => swipeLeft();
-document.getElementsByClassName('btn-x')[0].onclick = () => swipeRight();
+document.getElementsByClassName('btn-heart')[0].onclick = () => swipeRight();
+document.getElementsByClassName('btn-x')[0].onclick = () => swipeLeft();
 document.getElementsByClassName('avatar')[0].onload = () => {
   cardElement.classList.add('anim-fade-in');
   setTimeout(() => {
