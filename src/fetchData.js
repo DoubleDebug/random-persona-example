@@ -24,7 +24,7 @@ async function getNewPerson() {
   await fetch(API_URL)
     .then((data) => data.json())
     .then((person) => {
-      displayData(person.data);
+      displayData(person.data[0]);
     });
 }
 
